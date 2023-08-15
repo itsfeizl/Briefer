@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+      <link rel="stylesheet" href="static/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Briefer</title>
+  </head>
+
+  <body>
+    <!-- Navigation Menu -->
+    <section class="top-nav">
+      <div id="briefer">Briefer</div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+      <ul class="menu">
+        <li><a href="#politics">Politics</a></li>
+        <li><a href="#business">Business</a></li>
+        <li><a href="#entertainment">Entertainment</a></li>
+        <li><a href="#sports">Sports</a></li>
+        <li><a href="#international">International</a></li>
+      </ul>
+    </section>
+
+    <!-- Main Content -->
+    <div class="wrapper">
+      <div class="content">
+        <div class="news-sections news-sections-top">
+          <h1 id="politics">Politics</h1>
+
+          <ul>
+            {% for item in news_list %}
+              <li class="headline" onclick="toggleSummary(this)">
+                <a href="#">{{ item["title"] }}</a>
+                <div class="dropdown-content">
+                  <p>{{ item["summary"] }}
+                    <span>
+                      <a href="{{ https://www.graphic.com.gh{item['link']} }}" style="font-size: 14px">
+                        <em>Read more</em>
+                      </a>
+                    </span>
+                  </p>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-in"></div>
+      </div>
+    </div>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>
